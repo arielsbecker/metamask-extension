@@ -404,7 +404,7 @@ module.exports = class MetamaskController extends EventEmitter {
   /**
    * The metamask-state of the various controllers, made available to the UI
    *
-   * @returns {Object} status
+   * @returns {Object} - status
    */
   getState () {
     const vault = this.keyringController.store.getState().vault
@@ -421,7 +421,7 @@ module.exports = class MetamaskController extends EventEmitter {
    * These functions are the interface for the UI.
    * The API object can be transmitted over a stream with dnode.
    *
-   * @returns {Object} Object containing API functions.
+   * @returns {Object} - Object containing API functions.
    */
   getApi () {
     const keyringController = this.keyringController
@@ -578,7 +578,7 @@ module.exports = class MetamaskController extends EventEmitter {
    *
    * @param  {string} password
    *
-   * @returns {Object} vault
+   * @returns {Object} - vault
    */
   async createNewVaultAndKeychain (password) {
     const releaseLock = await this.createVaultMutex.acquire()
@@ -938,7 +938,7 @@ module.exports = class MetamaskController extends EventEmitter {
    *
    * Called when the first account is created and on unlocking the vault.
    *
-   * @returns {Promise<string>} Seed phrase to be confirmed by the user.
+   * @returns {Promise<string>} - Seed phrase to be confirmed by the user.
    */
   async verifySeedPhrase () {
 
@@ -982,7 +982,7 @@ module.exports = class MetamaskController extends EventEmitter {
   /**
    * Removes an account from state / storage.
    *
-   * @param {string[]} address A hex address
+   * @param {string[]} address - A hex address
    *
    */
   async removeAccount (address) {
@@ -1053,8 +1053,8 @@ module.exports = class MetamaskController extends EventEmitter {
   /**
    * Signifies user intent to complete an eth_sign method.
    *
-   * @param  {Object} msgParams The params passed to eth_call.
-   * @returns {Promise<Object>} Full state update.
+   * @param  {Object} msgParams - The params passed to eth_call.
+   * @returns {Promise<Object>} - Full state update.
    */
   signMessage (msgParams) {
     log.info('MetaMaskController - signMessage')
@@ -1166,7 +1166,7 @@ module.exports = class MetamaskController extends EventEmitter {
    * Triggers the callback in newUnsignedTypedMessage.
    *
    * @param  {Object} msgParams - The params passed to eth_signTypedData.
-   * @returns {Object} Full state update.
+   * @returns {Object} - Full state update.
    */
   async signTypedMessage (msgParams) {
     log.info('MetaMaskController - eth_signTypedData')
@@ -1226,7 +1226,7 @@ module.exports = class MetamaskController extends EventEmitter {
    * transaction.
    * @param {number} originalTxId - the id of the txMeta that you want to attempt to cancel
    * @param {string} [customGasPrice] - the hex value to use for the cancel transaction
-   * @returns {Object} MetaMask state
+   * @returns {Object} - MetaMask state
    */
   async createCancelTransaction (originalTxId, customGasPrice) {
     try {
@@ -1588,7 +1588,7 @@ module.exports = class MetamaskController extends EventEmitter {
 
   /**
    * Handle a KeyringController update
-   * @param {Object} state the KC state
+   * @param {Object} state - the KC state
    * @returns {Promise<void>}
    * @private
    */
@@ -1633,7 +1633,7 @@ module.exports = class MetamaskController extends EventEmitter {
    * Returns the lowest price that would have been included in
    * 50% of recent blocks.
    *
-   * @returns {string} A hex representation of the suggested wei gas price.
+   * @returns {string} - A hex representation of the suggested wei gas price.
    */
   getGasPrice () {
     const { recentBlocksController } = this
@@ -1925,7 +1925,7 @@ module.exports = class MetamaskController extends EventEmitter {
 
   /**
    * Adds a domain to the PhishingController whitelist
-   * @param {string} hostname the domain to whitelist
+   * @param {string} hostname - the domain to whitelist
    */
   whitelistPhishingDomain (hostname) {
     return this.phishingController.bypass(hostname)

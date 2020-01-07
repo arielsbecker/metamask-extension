@@ -121,7 +121,7 @@ class TransactionController extends EventEmitter {
     this._updatePendingTxsAfterFirstBlock()
   }
 
-  /** @returns {number} the chainId*/
+  /** @returns {number} - the chainId*/
   getChainId () {
     const networkState = this.networkStore.getState()
     const getChainId = parseInt(networkState)
@@ -152,7 +152,7 @@ class TransactionController extends EventEmitter {
   /**
   * Add a new unapproved transaction to the pipeline
   *
-  * @returns {Promise<string>} the hash of the transaction after being submitted to the network
+  * @returns {Promise<string>} - the hash of the transaction after being submitted to the network
   * @param {Object} txParams - txParams for the transaction
   * @param {Object} opts - with the key origin to put the origin on the txMeta
   */
@@ -253,7 +253,7 @@ class TransactionController extends EventEmitter {
   /**
    * Adds the tx gas defaults: gas && gasPrice
    * @param {Object} txMeta - the txMeta object
-   * @returns {Promise<object>} resolves with txMeta
+   * @returns {Promise<object>} - resolves with txMeta
    */
   async addTxGasDefaults (txMeta, getCodeResponse) {
     const txParams = txMeta.txParams

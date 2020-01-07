@@ -8,7 +8,7 @@ module.exports = {
 /**
  * Sets up stream multiplexing for the given stream
  * @param {any} connectionStream - the stream to mux
- * @returns {stream.Stream} the multiplexed stream
+ * @returns {stream.Stream} - the multiplexed stream
  */
 function setupMultiplex (connectionStream) {
   const mux = new ObjectMultiplex()

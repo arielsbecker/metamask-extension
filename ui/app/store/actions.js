@@ -1251,7 +1251,7 @@ function cancelTx (txData) {
 
 /**
  * Cancels all of the given transactions
- * @param {Array<object>} txDataList a list of tx data objects
+ * @param {Array<object>} txDataList - a list of tx data objects
  * @returns {function(*): Promise<void>}
  */
 function cancelTxs (txDataList) {
