@@ -134,7 +134,7 @@ class PermissionsController {
   /**
    * User approval callback. The request can fail if the request is invalid.
    *
-   * @param {object} approved - the approved request object
+   * @param {Object} approved - the approved request object
    * @param {Array} accounts - The accounts to expose, if any
    */
   async approvePermissionsRequest (approved, accounts) {
@@ -299,7 +299,7 @@ class PermissionsController {
 
   /**
    * Removes the given permissions for the given domain.
-   * @param {object} domains { origin: [permissions] }
+   * @param {Object} domains { origin: [permissions] }
    */
   removePermissionsFor (domains) {
 

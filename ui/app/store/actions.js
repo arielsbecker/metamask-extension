@@ -1783,7 +1783,7 @@ function addToAddressBook (recipient, nickname = '', memo = '') {
 
 /**
  * @description Calls the addressBookController to remove an existing address.
- * @param {String} addressToRemove - Address of the entry to remove from the address book
+ * @param {string} addressToRemove - Address of the entry to remove from the address book
  */
 function removeFromAddressBook (chainId, addressToRemove) {
   log.debug(`background.removeFromAddressBook`)

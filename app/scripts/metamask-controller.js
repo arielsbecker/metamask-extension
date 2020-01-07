@@ -1226,7 +1226,7 @@ module.exports = class MetamaskController extends EventEmitter {
    * transaction.
    * @param {number} originalTxId - the id of the txMeta that you want to attempt to cancel
    * @param {string} [customGasPrice] - the hex value to use for the cancel transaction
-   * @returns {object} MetaMask state
+   * @returns {Object} MetaMask state
    */
   async createCancelTransaction (originalTxId, customGasPrice) {
     try {
@@ -1588,7 +1588,7 @@ module.exports = class MetamaskController extends EventEmitter {
 
   /**
    * Handle a KeyringController update
-   * @param {object} state the KC state
+   * @param {Object} state the KC state
    * @returns {Promise<void>}
    * @private
    */
@@ -1851,7 +1851,7 @@ module.exports = class MetamaskController extends EventEmitter {
 
   /**
    * Sets the type of first time flow the user wishes to follow: create or import
-   * @param {String} type - Indicates the type of first time flow the user wishes to follow
+   * @param {string} type - Indicates the type of first time flow the user wishes to follow
    * @param {Function} cb - A callback function called when complete.
    */
   setFirstTimeFlowType (type, cb) {

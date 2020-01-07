@@ -48,16 +48,16 @@ const { hexToBn, bnToHex, BnMultiplyByFraction } = require('../../lib/util')
 
 
   @class
-  @param {object} - opts
-  @param {object}  opts.initState - initial transaction list default is an empty array
+  @param {Object} - opts
+  @param {Object}  opts.initState - initial transaction list default is an empty array
   @param {Object}  opts.networkStore - an observable store for network number
   @param {Object}  opts.blockTracker - An instance of eth-blocktracker
   @param {Object}  opts.provider - A network provider.
   @param {Function}  opts.signTransaction - function the signs an ethereumjs-tx
-  @param {object}  opts.getPermittedAccounts - get accounts that an origin has permissions for
+  @param {Object}  opts.getPermittedAccounts - get accounts that an origin has permissions for
   @param {Function}  [opts.getGasPrice] - optional gas price calculator
   @param {Function}  opts.signTransaction - ethTx signer that returns a rawTx
-  @param {Number}  [opts.txHistoryLimit] - number *optional* for limiting how many transactions are in state
+  @param {number}  [opts.txHistoryLimit] - number *optional* for limiting how many transactions are in state
   @param {Object}  opts.preferencesStore
 */
 
@@ -153,8 +153,8 @@ class TransactionController extends EventEmitter {
   * Add a new unapproved transaction to the pipeline
   *
   * @returns {Promise<string>} the hash of the transaction after being submitted to the network
-  * @param {object} txParams - txParams for the transaction
-  * @param {object} opts - with the key origin to put the origin on the txMeta
+  * @param {Object} txParams - txParams for the transaction
+  * @param {Object} opts - with the key origin to put the origin on the txMeta
   */
   async newUnapprovedTransaction (txParams, opts = {}) {
 
@@ -569,7 +569,7 @@ class TransactionController extends EventEmitter {
     this.getUnapprovedTxCount = () => Object.keys(this.txStateManager.getUnapprovedTxList()).length
     /**
       @returns {number} - number of transactions that have the status submitted
-      @param {String} account - hex prefixed account
+      @param {string} account - hex prefixed account
     */
     this.getPendingTxCount = (account) => this.txStateManager.getPendingTransactions(account).length
     /** see txStateManager */
@@ -683,7 +683,7 @@ class TransactionController extends EventEmitter {
     Sets other txMeta statuses to dropped if the txMeta that has been confirmed has other transactions
     in the list have the same nonce
 
-    @param {Number} txId - the txId of the transaction that has been confirmed in a block
+    @param {number} txId - the txId of the transaction that has been confirmed in a block
   */
   _markNonceDuplicatesDropped (txId) {
     // get the confirmed transactions nonce and from address
