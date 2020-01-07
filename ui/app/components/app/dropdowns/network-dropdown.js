@@ -376,7 +376,7 @@ NetworkDropdown.prototype.renderCommonRpc = function (rpcListDetail, provider) {
 }
 
 /**
- * @return {Component|null}
+ * @returns {Component|null}
  */
 NetworkDropdown.prototype.renderCustomOption = function NetworkDropdown (provider) {
   const { rpcTarget, type, ticker, nickname } = provider

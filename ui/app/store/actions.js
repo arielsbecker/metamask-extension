@@ -1252,7 +1252,7 @@ function cancelTx (txData) {
 /**
  * Cancels all of the given transactions
  * @param {Array<object>} txDataList a list of tx data objects
- * @return {function(*): Promise<void>}
+ * @returns {function(*): Promise<void>}
  */
 function cancelTxs (txDataList) {
   return async (dispatch) => {
